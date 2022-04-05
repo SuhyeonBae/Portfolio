@@ -1,0 +1,45 @@
+<picture class="background" [ngClass]="{ 'dark-mode': isDarkMode, 'langding-page' : isFirstPage}">
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" width="1920" height="1080">
+    <path id="first-line" d="M53.227871,76.2967v853.951479c0,0,0-5.825396,0,13.410964c0,10.05135,5.729676,20.206576,23.86756,20.206576c1620.211486,0,1661.137637-.039199,1661.137637-.039199" transform="matrix(1.112984 0 0 1.112984-14.625593-90.917007)" fill="none" stroke="#2c8be7" stroke-width="3.84"/>
+    <path id="second-line" d="M53.227871,34.92608v895.322099c0,0,0-5.825396,0,13.410964c0,10.05135,5.729676,20.206576,23.86756,20.206576c1620.211486,0,1621.050649-.039198,1621.050649-.039198" transform="matrix(1.112984 0 0 1.112984 30.924561-44.872171)" fill="none" stroke="#2c8be7" stroke-width="3.84"/>
+  </svg>
+</picture>
+
+<main *ngIf="isFirstPage" class="langding-page" (click)="moveTo()">
+  <div>
+    <h1>Suhyeon Bae</h1>
+    <h3>Junior Developer</h3>
+    <p>> see what I can do</p>
+  </div>
+</main>
+
+<main *ngIf="!isFirstPage">
+  <form [formGroup]="form" class="sub-menu" [class.dark-mode]="isDarkMode">
+    <ng-container *ngFor="let lang of languages">
+      <label class="languages-label" [class.active]="input.value === form.value.language">
+        <input #input class="languages" type="radio" name="lang" value="{{lang}}" (click)="changeLanguage($event)">{{lang}}
+      </label>
+    </ng-container>
+
+    <div class="toggle-section">
+      <label class="switch">
+        <input type="checkbox" [checked]="isDarkMode" (change)="toggleMode()">
+        <span class="slider"></span>
+      </label>
+      <p class="switch-label" *ngIf="isDarkMode">Dark</p>
+      <p class="switch-label" *ngIf="!isDarkMode">Light</p>
+    </div>
+  </form>
+
+  <nav class="menu"  [class.dark-mode]="isDarkMode">
+    <ul>
+      <li><a routerLink="/about" routerLinkActive="active">About Me</a></li>
+      <li><a routerLink="/works" routerLinkActive="active">Works</a></li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+</main>
+
+
+
+
