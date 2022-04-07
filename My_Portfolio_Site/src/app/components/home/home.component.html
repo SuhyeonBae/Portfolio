@@ -1,12 +1,12 @@
-<picture class="background" [ngClass]="{ 'dark-mode': isDarkMode, 'langding-page' : isFirstPage}">
+<picture class="background" [ngClass]="{ 'dark-mode': isDarkMode, 'landing-page' : isFirstPage}">
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" width="1920" height="1080">
     <path id="first-line" d="M53.227871,76.2967v853.951479c0,0,0-5.825396,0,13.410964c0,10.05135,5.729676,20.206576,23.86756,20.206576c1620.211486,0,1661.137637-.039199,1661.137637-.039199" transform="matrix(1.112984 0 0 1.112984-14.625593-90.917007)" fill="none" stroke="#2c8be7" stroke-width="3.84"/>
     <path id="second-line" d="M53.227871,34.92608v895.322099c0,0,0-5.825396,0,13.410964c0,10.05135,5.729676,20.206576,23.86756,20.206576c1620.211486,0,1621.050649-.039198,1621.050649-.039198" transform="matrix(1.112984 0 0 1.112984 30.924561-44.872171)" fill="none" stroke="#2c8be7" stroke-width="3.84"/>
   </svg>
 </picture>
 
-<main *ngIf="isFirstPage" class="langding-page" (click)="moveTo()">
-  <div>
+<main *ngIf="isFirstPage" class="landing-page" (click)="moveTo()">
+  <div class="container">
     <h1>Suhyeon Bae</h1>
     <h3>Junior Developer</h3>
     <p>> see what I can do</p>
@@ -20,6 +20,13 @@
         <input #input class="languages" type="radio" name="lang" value="{{lang}}" (click)="changeLanguage($event)">{{lang}}
       </label>
     </ng-container>
+    <picture class="icn-lang" [class.dark-mode]="isDarkMode">
+      <svg width="36px" height="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 36 36" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+        <path d="M30,3h-16v5h2v-3h14c.6,0,1,.4,1,1v11c0,.6-.4,1-1,1h-13v7h-5.3L8,27.9L8,25h-3c-.6,0-1-.4-1-1v-11c0-.6.4-1,1-1h13v-2h-13c-1.7,0-3,1.3-3,3v11c0,1.7,1.3,3,3,3h1v5.1L12.3,27h6.7v-7h11c1.7,0,3-1.3,3-3v-11c0-1.7-1.3-3-3-3Z" fill="#2c8be7"/>
+        <path d="M6.2,22.9h2.4l.6-1.6h3.1l.6,1.6h2.4L11.9,14h-2.4L6.2,22.9Zm4.5-6.4l1,3.1h-2l1-3.1Z" fill="#2c8be7"/>
+        <path d="M20,17c1.1,0,2.6-.3,4-1c1.4.7,3,1,4,1v-2c0,0-1,0-2.1-.4c1.2-1.2,2.1-3,2.1-5.6v-1h-3v-2h-2v2h-3v2h5.9c-.2,1.8-1,2.9-1.9,3.6-.6-.5-1.2-1.2-1.6-2.1h-2.1c.4,1.3,1,2.3,1.8,3.1-1,.4-1.9.4-2.1.4v2Z" fill="#2c8be7"/>
+      </svg>
+    </picture>
 
     <div class="toggle-section">
       <label class="switch">
@@ -32,12 +39,21 @@
   </form>
 
   <nav class="menu"  [class.dark-mode]="isDarkMode">
+    <picture class="icn-menu" [class.dark-mode]="isDarkMode">
+      <svg width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 290 290" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+        <g><rect width="70" height="70" rx="0" ry="0" transform="translate(110 220)" fill="#2c8be7"/>
+          <rect width="70" height="70" rx="0" ry="0" transform="translate(110 110)" fill="#2c8be7"/>
+          <rect width="70" height="70" rx="0" ry="0" transform="translate(110 0)" fill="#2c8be7"/></g>
+      </svg>
+    </picture>
     <ul>
       <li><a routerLink="/about" routerLinkActive="active">About Me</a></li>
       <li><a routerLink="/works" routerLinkActive="active">Works</a></li>
     </ul>
   </nav>
-  <router-outlet></router-outlet>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 </main>
 
 

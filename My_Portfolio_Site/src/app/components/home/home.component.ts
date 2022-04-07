@@ -1,7 +1,7 @@
-import { Component, OnInit }  from '@angular/core';
+import { Component, HostListener, OnInit }  from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   constructor(
     public formBuilder : FormBuilder,
     public router: Router,
+    public service: DataService
   ) { }
 
   ngOnInit(): void {
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit {
 
   public toggleMode(){
     this.isDarkMode = !this.isDarkMode;
+    DataService.isDarkMode.next(this.isDarkMode);
   }
 
   public initForm(){
