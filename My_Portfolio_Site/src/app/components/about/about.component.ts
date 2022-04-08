@@ -9,7 +9,7 @@ import { DataService } from 'src/app/services/data.service';
 export class AboutComponent implements OnInit {
   public isDarkMode: boolean;
   public skills: Array<string> = ['Angular2+', 'React', 'Typescript', 'Javascript', 'HTML', 'CSS', 'SASS', 'Bootstrap', 'rxjs'];
-  public traits: Array<string> = ['Time Management', 'Analysis', 'Problem Solving', 'Team Player', 'Ability to Learn', 'Accuracy', 'Attention to Details', 'Communication'];
+  public traits: Array<string> = ['TIME_MANAGEMENT', 'ANALYSIS', 'PROBLEM_SOLVING', 'TEAM_PLAYER', 'ABILITY_TO_LEARN', 'ACCURACY', 'ATTENTION_TO_DETAILS', 'COMMUNICATION'];
 
   constructor() { }
 

@@ -1,0 +1,28 @@
+{
+  "ABOUT" : {
+    "NAME": "배수현",
+    "POSITION": "주니어 프론트엔드 엔지니어",
+    "TIME_MANAGEMENT": "시간 관리",
+    "ANALYSIS": "문제 분석",
+    "PROBLEM_SOLVING": "문제 해결 능력",
+    "TEAM_PLAYER": "팀 플레이어",
+    "ABILITY_TO_LEARN": "배움의 자세",
+    "ACCURACY": "정확성",
+    "ATTENTION_TO_DETAILS": "디테일을 의식",
+    "COMMUNICATION": "의사 소통 능력"
+  },
+  "COMMON" : {
+    "ENG": "영어",
+    "KOR": "한국어",
+    "JPN": "일본어",
+    "LIGHT": "라이트",
+    "DARK": "다크"
+  },
+  "MENU": {
+    "ENG": "영어",
+    "KOR": "한국어",
+    "JPN": "일본어",
+    "ABOUT": "자기소개",
+    "WORKS": "작업"
+  }
+}
