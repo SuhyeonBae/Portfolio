@@ -10,11 +10,7 @@ import { AboutComponent } from './components/about/about.component';
 import { WorksComponent } from './components/works/works.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient } from '@angular/common/http';
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/', '.json');
-}
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +20,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     WorksComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -41,3 +38,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

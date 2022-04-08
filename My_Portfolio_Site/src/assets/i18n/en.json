@@ -1,0 +1,28 @@
+{
+  "ABOUT" : {
+    "NAME": "Suhyeon Bae",
+    "POSITION": "Junior Frontend Engineer",
+    "TIME_MANAGEMENT": "Time Management",
+    "ANALYSIS": "Analysis",
+    "PROBLEM_SOLVING": "Problem Solving",
+    "TEAM_PLAYER": "Team Player",
+    "ABILITY_TO_LEARN": "Ability to Learn",
+    "ACCURACY": "Accuracy",
+    "ATTENTION_TO_DETAILS": "Attention to Details",
+    "COMMUNICATION": "Communication"
+  },
+  "COMMON" : {
+    "ENG": "English",
+    "KOR": "Korean",
+    "JPN": "Japanese",
+    "LIGHT": "Light",
+    "DARK": "Dark"
+  },
+  "MENU": {
+    "ENG": "ENG",
+    "KOR": "KOR",
+    "JPN": "JPN",
+    "ABOUT": "About Me",
+    "WORKS": "Works"
+  }
+}

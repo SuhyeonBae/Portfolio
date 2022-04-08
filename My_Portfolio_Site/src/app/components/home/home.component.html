@@ -17,7 +17,7 @@
   <form [formGroup]="form" class="sub-menu" [class.dark-mode]="isDarkMode">
     <ng-container *ngFor="let lang of languages">
       <label class="languages-label" [class.active]="input.value === form.value.language">
-        <input #input class="languages" type="radio" name="lang" value="{{lang}}" (click)="changeLanguage($event)">{{lang}}
+        <input #input class="languages" type="radio" name="lang.value" value="{{lang.value}}" (click)="changeLanguage($event)">{{'MENU.' + lang.label | translate}}
       </label>
     </ng-container>
     <picture class="icn-lang" [class.dark-mode]="isDarkMode">
@@ -33,8 +33,8 @@
         <input type="checkbox" [checked]="isDarkMode" (change)="toggleMode()">
         <span class="slider"></span>
       </label>
-      <p class="switch-label" *ngIf="isDarkMode">Dark</p>
-      <p class="switch-label" *ngIf="!isDarkMode">Light</p>
+      <p class="switch-label" *ngIf="isDarkMode">{{'COMMON.DARK' | translate}}</p>
+      <p class="switch-label" *ngIf="!isDarkMode">{{'COMMON.LIGHT' | translate}}</p>
     </div>
   </form>
 
@@ -47,8 +47,8 @@
       </svg>
     </picture>
     <ul>
-      <li><a routerLink="/about" routerLinkActive="active">About Me</a></li>
-      <li><a routerLink="/works" routerLinkActive="active">Works</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">{{'MENU.ABOUT' | translate}}</a></li>
+      <li><a routerLink="/works" routerLinkActive="active">{{'MENU.WORKS' | translate}}</a></li>
     </ul>
   </nav>
   <div class="container">

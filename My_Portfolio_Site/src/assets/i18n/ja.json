@@ -1,0 +1,28 @@
+{
+  "ABOUT" : {
+    "NAME": "ぺ・スヒョン",
+    "POSITION": "ジュニアフロントエンドエンジニア",
+    "TIME_MANAGEMENT": "時間管理",
+    "ANALYSIS": "問題分析",
+    "PROBLEM_SOLVING": "問題解決力",
+    "TEAM_PLAYER": "チームプレイヤー",
+    "ABILITY_TO_LEARN": "学ぶ姿勢",
+    "ACCURACY": "正確性",
+    "ATTENTION_TO_DETAILS": "ディテールへの拘り",
+    "COMMUNICATION": "コミュニケーション能力"
+  },
+  "COMMON" : {
+    "ENG": "英語",
+    "KOR": "韓国語",
+    "JPN": "日本語",
+    "LIGHT": "ライト",
+    "DARK": "ダーク"
+  },
+  "MENU": {
+    "ENG": "英語",
+    "KOR": "韓国語",
+    "JPN": "日本語",
+    "ABOUT": "自己紹介",
+    "WORKS": "作業"
+  }
+}

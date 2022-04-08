@@ -10,7 +10,7 @@ import { DataService } from 'src/app/services/data.service';
 export class HomeComponent implements OnInit {
   public isFirstPage: boolean = false;
   public isDarkMode: boolean = false;
-  public languages: Array<string> = ['ENG', 'KOR', 'JPN'];
+  public languages: Array<any> = [{ value: 'en', label: 'ENG' }, { value: 'ko', label: 'KOR' }, { value: 'ja', label: 'JPN' }];
   public form: FormGroup;
 
   constructor(
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
 
   public initForm(){
     this.form = this.formBuilder.group({
-      language: ['ENG']
+      language: ['en']
     })
   }
 
@@ -40,6 +40,7 @@ export class HomeComponent implements OnInit {
       return;
     }
     this.form.value.language = e.target.value;
+    DataService.language.next(this.form.value.language);
   }
 
   public moveTo() {
