@@ -1,1 +1,16 @@
-<p>works works!</p>
+<main>
+  <ng-container *ngFor="let work of works">
+    <div class="work">
+      <div class="work-header">
+        <p class="title">{{'WORKS.' + work.title | translate}}</p>
+        <span class="status">{{'WORKS.' + work.status | translate}}</span>
+      </div>
+      <picture class="screenshot">
+        <img src="{{work.imgUrl}}" alt="{{work.title}}"/>
+      </picture>
+      <a *ngIf="work.wireframeUrl" href="{{work.wireframeUrl}}" target="_blank">{{"WORKS.WIREFRAME" | translate}}</a>
+      <a href="{{work.demoUrl}}" target="_blank">{{"WORKS.DEMO" | translate}}</a>
+      <a href="{{work.githubUrl}}" target="_blank">{{"WORKS.GITHUB" | translate}}</a>
+    </div>
+  </ng-container>
+</main>

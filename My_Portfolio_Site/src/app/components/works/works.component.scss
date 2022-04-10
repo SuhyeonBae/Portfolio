@@ -1,0 +1,82 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixin';
+
+main {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  @include breakpoint(lg) {
+    margin-top: -3rem;
+    height: 80vh;
+    overflow: scroll;
+  }
+  @include breakpoint(xs) {
+    margin-top: 0;
+    justify-content: flex-start;
+  }
+  .work {
+    min-height: 363px;
+    font-size: 16px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    p, a {
+      color: $color-light-main;
+      margin: auto 0;
+      @include breakpoint(xs) {
+        font-size: 14px;
+      }
+    }
+    a {
+      margin-bottom: 10px;
+      text-decoration: none;
+      @include breakpoint(xs) {
+        margin: 0;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      .title {
+        font-weight: bold;
+      }
+      .status {
+        font-size: 14px;
+        padding: 4px;
+        border: 2px solid $color-light-border;
+        border-radius: 30px;
+        @include breakpoint(xs) {
+          font-size: 12px;
+          border-width: 1px;
+          padding: 2px;
+        }
+      }
+    }
+    .screenshot {
+      display: flex;
+      align-items: center;
+      width: 300px;
+      height: 200px;
+      overflow: hidden;
+      border: 2px solid $color-light-border;
+      background-color: $color-light-border;
+      margin: 8px auto 16px;
+      @include breakpoint(xs) {
+        width: 240px;
+        height: 150px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

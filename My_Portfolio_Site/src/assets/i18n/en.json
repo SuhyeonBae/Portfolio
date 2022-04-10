@@ -24,5 +24,14 @@
     "JPN": "JPN",
     "ABOUT": "About Me",
     "WORKS": "Works"
+  },
+  "WORKS": {
+    "DONE": "Done",
+    "ONGOING": "Ongoing",
+    "PERSONAL_WEBSITE": "Personal Website",
+    "WAVVE_CLONE": "Streaming Site Clone",
+    "WIREFRAME": "wireframe link",
+    "DEMO": "see demo",
+    "GITHUB": "see github"
   }
 }

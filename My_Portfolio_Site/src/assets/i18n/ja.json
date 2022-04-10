@@ -24,5 +24,14 @@
     "JPN": "日本語",
     "ABOUT": "自己紹介",
     "WORKS": "作業"
+  },
+  "WORKS": {
+    "DONE": "完了",
+    "ONGOING": "作業中",
+    "PERSONAL_WEBSITE": "個人ウェブサイト",
+    "WAVVE_CLONE": "ストリーミング サイトクローン",
+    "WIREFRAME": "ワイヤフレームのリンク",
+    "DEMO": "デモを見に行く",
+    "GITHUB": "GitHubを見に行く"
   }
 }

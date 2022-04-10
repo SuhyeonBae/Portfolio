@@ -62,9 +62,10 @@ main.landing-page {
     align-items: flex-end;
     font-size: 1.5rem;
     .container {
+      width: 100%;
       color: $color-light-main;
       font-size: 1.5rem;
-      margin: 10rem;
+      margin: 8rem 10rem;
       h1, h3 {
         margin: 0.5rem 0;
       }
@@ -79,10 +80,10 @@ main.landing-page {
       }
       @include breakpoint(sm) {
         font-size: 1rem;
-        margin:  4rem 5rem;
+        margin:  4rem 6rem;
       }
       @include breakpoint(xs) {
-        margin: 4rem 1rem 4rem 5rem;
+        margin: 4rem 2rem 4rem 5rem;
       }
     }
   .sub-menu {
@@ -127,6 +128,11 @@ main.landing-page {
         border: 3px solid $color-light-main;
         margin-left: 16px;
         @include rounded(1rem);
+        @include breakpoint(xs) {
+          width: 40px;
+          height: 20px;
+          border-width: 2px;
+        }
         input {
           position: absolute;
           appearance: none;
@@ -141,6 +147,10 @@ main.landing-page {
           cursor: pointer;
           @include rounded(50%);
           @include transition(all);
+          @include breakpoint(xs) {
+            width: 18px;
+            height: 18px;
+          }
         }
         &-label {
           color: $color-light-main;
@@ -182,7 +192,7 @@ main.landing-page {
       font-size: 16px;
     }
     @include breakpoint(xs) {
-      right: 12px;
+      right: 8px;
       ul {
         display: none;
       }
@@ -204,6 +214,9 @@ main.landing-page {
         .slider {
           left: 26px;
           background-color: $color-dark-background;
+          @include  breakpoint(xs) {
+            left: 23px;
+          }
         }
         &-label {
           color: $color-dark-main;
