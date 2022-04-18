@@ -50,37 +50,35 @@ main.landing-page {
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 50%;
   &:hover {
     cursor: pointer;
+  }
+  .container {
+    margin: 0 auto;
   }
   }
 
   main {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-end;
+    width: 100%;
+    height: 100%;
     font-size: 1.5rem;
     .container {
-      width: 100%;
+      width: calc(100% - 15rem);
       color: $color-light-main;
+      margin: 8rem auto;
       font-size: 1.5rem;
-      margin: 8rem 10rem;
-      h1, h3 {
-        margin: 0.5rem 0;
-      }
-      p {
-        margin: 2rem 0;
-      }
+
       @include breakpoint(lg) {
         font-size: 1.2rem;
       }
       @include breakpoint(md) {
-        margin: 5rem 8rem;
+        width: calc(100% - 10rem);
+        margin: 5rem auto;
       }
       @include breakpoint(sm) {
         font-size: 1rem;
-        margin:  4rem 6rem;
+        margin:  4rem auto;
       }
       @include breakpoint(xs) {
         margin: 4rem 2rem 4rem 5rem;
@@ -112,7 +110,7 @@ main.landing-page {
         @include breakpoint(md){
           font-size: 14px;
         }
-        @include breakpoint(xs){
+        @include breakpoint(sm){
           display: none;
         }
       }
@@ -172,6 +170,10 @@ main.landing-page {
     margin: 0 auto;
     font-size: 20px;
     font-weight: bold;
+    // background-color: $color-light-background;
+    ul {
+      margin: 0;
+    }
     li {
       color: $color-light-inactive;
       padding: 8px;
@@ -191,7 +193,7 @@ main.landing-page {
     @include breakpoint(md){
       font-size: 16px;
     }
-    @include breakpoint(xs) {
+    @include breakpoint(sm) {
       right: 8px;
       ul {
         display: none;
@@ -224,16 +226,19 @@ main.landing-page {
       }
     }
     &.menu {
-      li {
-        color: $color-dark-inactive;
-        a {
+      ul {
+        // background-color: $color-dark-background;
+        li {
           color: $color-dark-inactive;
-          &.active {
-            color: $color-dark-main;
-            border-left: 5px solid $color-dark-main;
-          }
+          a {
+            color: $color-dark-inactive;
+            &.active {
+              color: $color-dark-main;
+              border-left: 5px solid $color-dark-main;
+            }
+          };
         };
-      };
+      }
     }
   }
 }
@@ -241,7 +246,7 @@ main.landing-page {
 .icn {
   &-lang, &-menu {
     display: none;
-    @include breakpoint(xs){
+    @include breakpoint(sm){
       display: block;
     }
 

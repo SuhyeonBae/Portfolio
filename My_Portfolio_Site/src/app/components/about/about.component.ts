@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -18,5 +19,7 @@ export class AboutComponent implements OnInit {
       this.isDarkMode = res;
     })
   }
+
+
 
 }

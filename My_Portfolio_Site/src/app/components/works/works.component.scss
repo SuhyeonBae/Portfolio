@@ -7,13 +7,28 @@ main {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: $color-light-border;
+  }
+  &::-webkit-scrollbar-thumb:window-inactive {
+    background: $color-light-border;
+  }
+
   @include breakpoint(lg) {
-    margin-top: -3rem;
-    height: 80vh;
-    overflow: scroll;
+    height: 70vh;
+    overflow-y: scroll;
   }
   @include breakpoint(xs) {
-    margin-top: 0;
     justify-content: flex-start;
   }
   .work {
@@ -78,5 +93,32 @@ main {
         width: 100%;
       }
     }
+  }
+  &.dark-mode {
+    &::-webkit-scrollbar-thumb {
+      background: $color-dark-border;
+    }
+    &::-webkit-scrollbar-thumb:window-inactive {
+      background: $color-dark-border;
+    }
+    color: $color-dark-main;
+    .work {
+      .work-header {
+        .title {
+          color: $color-dark-main;
+        }
+        .status {
+          border-color: $color-dark-border;
+        }
+      }
+      .screenshot {
+        border-color: $color-dark-border;
+        background-color: $color-dark-border;
+      }
+      a {
+        color: $color-dark-main;
+      }
+    }
+
   }
 }

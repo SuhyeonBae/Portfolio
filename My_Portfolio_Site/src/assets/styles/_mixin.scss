@@ -6,14 +6,18 @@
   border-radius: $radius;
 }
 
-@mixin linear-gradient($from, $to){
+@mixin linear-gradient($from, $to, $txt){
   background-color: $to;
-  background-image: -moz-linear-gradient($from, $to);
-  background-image: -o-linear-gradient($from, $to);
-  background-image: -webkit-linear-gradient($from, $to);
-  background-image: -webkit-linear-gradient(linear, left top, left bottom, color-stop(0, $from), color-stop(1, $to));
-  background-image: -ms-linear-gradient($from, $to);
-  background-image: linear-gradient($from, $to);
+  background-image: -moz-linear-gradient(to right, $from, $to);
+  background-image: -o-linear-gradient(to right, $from, $to);
+  background-image: -webkit-linear-gradient(to right, $from, $to);
+  background-image: -webkit-linear-gradient(to right, color-stop(0, $from), color-stop(1, $to));
+  background-image: -ms-linear-gradient(to right, $from, $to);
+  background-image: linear-gradient(to right, $from, $to);
+  @if($txt){
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 @mixin transform($translate){

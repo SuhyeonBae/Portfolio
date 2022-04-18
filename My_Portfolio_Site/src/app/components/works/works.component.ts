@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-works',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./works.component.scss']
 })
 export class WorksComponent implements OnInit {
+  public isDarkMode: boolean;
   public works: Array<any> = [
     {
       title: 'PERSONAL_WEBSITE',
@@ -22,7 +24,7 @@ export class WorksComponent implements OnInit {
       demoUrl: "",
       githubUrl: ""
     },{
-      title: 'JS_PLAYGRUOND',
+      title: 'JS_PLAYGROUND',
       status: 'DONE',
       imgUrl:  "../../../assets/images/work3.jpg",
       wireframeUrl: "",
@@ -34,6 +36,9 @@ export class WorksComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    DataService.isDarkMode.subscribe(res => {
+      this.isDarkMode = res;
+    })
   }
 
 }

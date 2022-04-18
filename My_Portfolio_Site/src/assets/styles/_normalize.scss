@@ -116,6 +116,7 @@ textarea {
 // Addresses margins handled incorrectly in IE6/7
 html, body {
     margin: 0;
+    overflow: hidden;
 }
 
 // =============================================================================
