@@ -55,6 +55,7 @@ main.landing-page {
     cursor: pointer;
   }
   .container {
+    overflow: hidden;
     margin: 0 auto;
   }
   }
@@ -65,10 +66,12 @@ main.landing-page {
     font-size: 1.5rem;
     .container {
       width: calc(100% - 15rem);
+      height: 78vh;
       color: $color-light-main;
       margin: 8rem auto;
       font-size: 1.5rem;
-
+      overflow-y: auto;
+      @include customScroll($color-light-border);
       @include breakpoint(lg) {
         font-size: 1.2rem;
       }
@@ -78,10 +81,11 @@ main.landing-page {
       }
       @include breakpoint(sm) {
         font-size: 1rem;
-        margin:  4rem auto;
+        width: calc(100% - 5rem);
+        margin:  4rem 5rem;
       }
-      @include breakpoint(xs) {
-        margin: 4rem 2rem 4rem 5rem;
+      &.dark-mode {
+        @include customScroll($color-dark-border);
       }
     }
   .sub-menu {
@@ -144,7 +148,7 @@ main.landing-page {
           background-color: $color-light-main;
           cursor: pointer;
           @include rounded(50%);
-          @include transition(all);
+          @include transition(background-color);
           @include breakpoint(xs) {
             width: 18px;
             height: 18px;
@@ -248,6 +252,10 @@ main.landing-page {
     display: none;
     @include breakpoint(sm){
       display: block;
+    }
+
+    &:hover {
+      cursor: pointer;
     }
 
     &.dark-mode {

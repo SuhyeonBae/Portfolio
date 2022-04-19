@@ -16,6 +16,9 @@ main {
     }
     .name {
       margin-left: 1rem;
+      background-color: $color-light-background;
+      border-radius: 6px;
+      @include transition(background-color);
       h1 {
         border-bottom: 1px solid $color-light-main;
       }
@@ -66,6 +69,7 @@ main {
         border: 2px solid $color-light-border;
         border-radius: 20px;
         background-color: $color-light-background;
+        @include transition(all);
         @include breakpoint(xs) {
           font-size: 0.8rem;
         }
@@ -85,8 +89,11 @@ main {
   &.dark-mode {
     color: $color-dark-main;
     .profile {
-      .name > h1 {
-        border-bottom: 1px solid $color-dark-main;
+      .name {
+        background-color: $color-dark-background;
+        h1 {
+          border-bottom: 1px solid $color-dark-main;
+        }
       }
     }
     .skill-sets {

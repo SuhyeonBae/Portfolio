@@ -5,7 +5,8 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  static isDarkMode: Subject<boolean> = new Subject();
+  static isDarkMode: boolean;
+  static toggleDarkMode: Subject<boolean> = new Subject();
   static language: Subject<string> = new Subject();
 
   constructor() { }

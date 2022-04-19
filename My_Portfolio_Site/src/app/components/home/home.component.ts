@@ -26,7 +26,8 @@ export class HomeComponent implements OnInit {
 
   public toggleMode(){
     this.isDarkMode = !this.isDarkMode;
-    DataService.isDarkMode.next(this.isDarkMode);
+    DataService.toggleDarkMode.next(this.isDarkMode);
+    DataService.isDarkMode = this.isDarkMode;
   }
 
   public initForm(){
@@ -46,6 +47,10 @@ export class HomeComponent implements OnInit {
   public moveTo() {
     this.isFirstPage = false;
     this.router.navigate(['about'])
+  }
+
+  public showMenu(){
+
   }
 
 }

@@ -7,7 +7,7 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./works.component.scss']
 })
 export class WorksComponent implements OnInit {
-  public isDarkMode: boolean;
+  public isDarkMode: boolean = DataService.isDarkMode;
   public works: Array<any> = [
     {
       title: 'PERSONAL_WEBSITE',
@@ -36,9 +36,8 @@ export class WorksComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    DataService.isDarkMode.subscribe(res => {
+    DataService.toggleDarkMode.subscribe(res => {
       this.isDarkMode = res;
     })
   }
-
 }
