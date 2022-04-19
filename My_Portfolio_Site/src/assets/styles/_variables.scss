@@ -1,9 +1,11 @@
 $color-light-background: #fff;   // white
+$color-light-transparent-background: rgba(255, 255, 255, 0.85);
 $color-light-main: #2c8be7;      // blue
 $color-light-inactive: #171717;  // black
 $color-light-border: #c6e1f5; // light sky blue
 
 $color-dark-background: #202125; // dark navy
+$color-dark-transparent-background: rgba(32, 33, 37, 0.85); // dark navy
 $color-dark-main: #ABBBEA;       //light purplish blue
 $color-dark-inactive: #6e6e6e;   //gray;
 $color-dark-border: #717a94;     //darkish purplish blue
