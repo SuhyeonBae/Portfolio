@@ -1,0 +1,44 @@
+@import '../../../assets/styles/variables';
+
+.gnb { //global navigation bar
+  height: 74px;
+  .wrapper {
+    width: 1240px;
+    height: inherit;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+      padding: 0;
+      display: flex;
+      flex-flow: row;
+      li {
+        margin: 0 11px;
+        cursor: pointer;
+      }
+    }
+    .logo {
+      width: 111px;
+      height: 20px;
+    }
+    .profile {
+      &:hover {
+        color: red;
+      }
+    }
+    .drop-down {
+      display: none;
+    }
+  }
+  &.top {
+    height: 34px;
+    border-bottom: 1px solid $border;
+    .wrapper {
+      justify-content: flex-end;
+    }
+  }
+
+
+
+}
