@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit }  from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren }  from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
@@ -8,6 +8,8 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  @ViewChild('menu') public menu: ElementRef;
+  @ViewChildren('languages') public lang: QueryList<ElementRef>;
   public isFirstPage: boolean = false;
   public isDarkMode: boolean = false;
   public languages: Array<any> = [{ value: 'en', label: 'ENG' }, { value: 'ko', label: 'KOR' }, { value: 'ja', label: 'JPN' }];
@@ -22,6 +24,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.isFirstPage = this.router.url === '/';
     this.initForm();
+  }
+
+  public trackByFn(index: number, item: any){
+    return index;
   }
 
   public toggleMode(){
@@ -49,8 +55,16 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['about'])
   }
 
-  public showMenu(){
-
+  public toggleMenuVisibility(name: string, show: boolean){
+    if (show) {
+      name === 'menu' ? this.menu.nativeElement.style.display = 'block' : this.lang.map(el => el.nativeElement.style.display = 'block');
+      document.querySelector(`.icn-${name}`)?.setAttribute('style', 'display: none;')
+      document.querySelector(`.icn-${name}-close`)?.setAttribute('style', 'display: block;')
+    } else {
+      name === 'menu' ? this.menu.nativeElement.style.display = 'none' : this.lang.map(el => el.nativeElement.style.display = 'none');
+      document.querySelector(`.icn-${name}`)?.setAttribute('style', 'display: block;')
+      document.querySelector(`.icn-${name}-close`)?.setAttribute('style', 'display: none;')
+    }
   }
 
 }

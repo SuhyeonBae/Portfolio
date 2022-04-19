@@ -11,7 +11,7 @@
 
   <section class="skill-sets">
     <div class="skills">
-      <ng-container *ngFor="let skill of skills">
+      <ng-container *ngFor="let skill of skills; trackBy: trackByFn;">
         <span>{{skill}}</span>
       </ng-container>
     </div>
@@ -24,7 +24,7 @@
 
 
     <div class="traits">
-      <ng-container *ngFor="let trait of traits">
+      <ng-container *ngFor="let trait of traits; trackBy: trackByFn;">
         <span>{{'ABOUT.'+ trait | translate}}</span>
       </ng-container>
     </div>

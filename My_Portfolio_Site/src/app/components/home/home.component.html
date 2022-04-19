@@ -15,16 +15,19 @@
 
 <main *ngIf="!isFirstPage">
   <form [formGroup]="form" class="sub-menu" [class.dark-mode]="isDarkMode">
-    <ng-container *ngFor="let lang of languages">
-      <label class="languages-label" [class.active]="input.value === form.value.language">
+    <ng-container *ngFor="let lang of languages; trackBy: trackByFn;">
+      <label #languages class="languages-label" [class.active]="input.value === form.value.language">
         <input #input class="languages" type="radio" name="lang.value" value="{{lang.value}}" (click)="changeLanguage($event)">{{'MENU.' + lang.label | translate}}
       </label>
     </ng-container>
-    <picture class="icn-lang" [class.dark-mode]="isDarkMode">
-      <svg width="36px" height="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 36 36" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <picture>
+      <svg class="icn-lang" (click)="toggleMenuVisibility('lang', true)" [class.dark-mode]="isDarkMode" width="36px" height="36px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 36 36" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
         <path d="M30,3h-16v5h2v-3h14c.6,0,1,.4,1,1v11c0,.6-.4,1-1,1h-13v7h-5.3L8,27.9L8,25h-3c-.6,0-1-.4-1-1v-11c0-.6.4-1,1-1h13v-2h-13c-1.7,0-3,1.3-3,3v11c0,1.7,1.3,3,3,3h1v5.1L12.3,27h6.7v-7h11c1.7,0,3-1.3,3-3v-11c0-1.7-1.3-3-3-3Z" fill="#2c8be7"/>
         <path d="M6.2,22.9h2.4l.6-1.6h3.1l.6,1.6h2.4L11.9,14h-2.4L6.2,22.9Zm4.5-6.4l1,3.1h-2l1-3.1Z" fill="#2c8be7"/>
         <path d="M20,17c1.1,0,2.6-.3,4-1c1.4.7,3,1,4,1v-2c0,0-1,0-2.1-.4c1.2-1.2,2.1-3,2.1-5.6v-1h-3v-2h-2v2h-3v2h5.9c-.2,1.8-1,2.9-1.9,3.6-.6-.5-1.2-1.2-1.6-2.1h-2.1c.4,1.3,1,2.3,1.8,3.1-1,.4-1.9.4-2.1.4v2Z" fill="#2c8be7"/>
+      </svg>
+      <svg class="icn-lang-close" (click)="toggleMenuVisibility('lang', false)" [class.dark-mode]="isDarkMode" width="26px" height="26px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+        <path d="M500,990C229.8,990,10,770.2,10,500s219.8-490,490-490s490,219.8,490,490-219.8,490-490,490Zm0-909.7C268.6,80.3,80.3,268.6,80.3,500s188.3,419.7,419.7,419.7s419.7-188.3,419.7-419.7-188.3-419.7-419.7-419.7Zm49.3,421.2L700.6,351.8c13.8-13.6,13.9-35.7.3-49.5s-35.8-13.9-49.5-.3L499.9,451.9L350.6,302.2c-13.7-13.7-35.8-13.8-49.5-.1-13.7,13.6-13.7,35.8-.1,49.5L450,501.1L299.8,649.8c-13.8,13.6-13.9,35.7-.3,49.5c6.9,6.9,15.9,10.4,24.9,10.4c8.9,0,17.8-3.4,24.6-10.1L499.5,550.8L651.2,703c6.8,6.9,15.8,10.3,24.8,10.3s17.9-3.4,24.7-10.2c13.7-13.7,13.7-35.8.1-49.5L549.3,501.5Z" fill="#2c8be7"/>
       </svg>
     </picture>
 
@@ -39,19 +42,22 @@
   </form>
 
   <nav class="menu"  [class.dark-mode]="isDarkMode">
-    <picture class="icn-menu" [class.dark-mode]="isDarkMode" (click)="showMenu()">
-      <svg width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 290 290" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <picture>
+      <svg class="icn-menu" (click)="toggleMenuVisibility('menu', true)" [class.dark-mode]="isDarkMode" width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 290 290" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
         <g><rect width="70" height="70" rx="0" ry="0" transform="translate(110 220)" fill="#2c8be7"/>
           <rect width="70" height="70" rx="0" ry="0" transform="translate(110 110)" fill="#2c8be7"/>
           <rect width="70" height="70" rx="0" ry="0" transform="translate(110 0)" fill="#2c8be7"/></g>
       </svg>
+      <svg class="icn-menu-close" (click)="toggleMenuVisibility('menu', false)" [class.dark-mode]="isDarkMode" width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+        <path d="M500,990C229.8,990,10,770.2,10,500s219.8-490,490-490s490,219.8,490,490-219.8,490-490,490Zm0-909.7C268.6,80.3,80.3,268.6,80.3,500s188.3,419.7,419.7,419.7s419.7-188.3,419.7-419.7-188.3-419.7-419.7-419.7Zm49.3,421.2L700.6,351.8c13.8-13.6,13.9-35.7.3-49.5s-35.8-13.9-49.5-.3L499.9,451.9L350.6,302.2c-13.7-13.7-35.8-13.8-49.5-.1-13.7,13.6-13.7,35.8-.1,49.5L450,501.1L299.8,649.8c-13.8,13.6-13.9,35.7-.3,49.5c6.9,6.9,15.9,10.4,24.9,10.4c8.9,0,17.8-3.4,24.6-10.1L499.5,550.8L651.2,703c6.8,6.9,15.8,10.3,24.8,10.3s17.9-3.4,24.7-10.2c13.7-13.7,13.7-35.8.1-49.5L549.3,501.5Z" fill="#2c8be7"/>
+      </svg>
     </picture>
-    <ul>
+    <ul #menu>
       <li><a routerLink="/about" routerLinkActive="active">{{'MENU.ABOUT' | translate}}</a></li>
       <li><a routerLink="/works" routerLinkActive="active">{{'MENU.WORKS' | translate}}</a></li>
     </ul>
   </nav>
-  <div class="container">
+  <div class="container" [class.dark-mode]="isDarkMode">
     <router-outlet></router-outlet>
   </div>
 </main>

@@ -20,6 +20,9 @@ export class AboutComponent implements OnInit {
     })
   }
 
+  public trackByFn(index: number, item: any){
+    return index;
+  }
 
 
 }

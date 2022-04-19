@@ -40,4 +40,8 @@ export class WorksComponent implements OnInit {
       this.isDarkMode = res;
     })
   }
+
+  public trackByFn(index: number, item: any){
+    return index;
+  }
 }

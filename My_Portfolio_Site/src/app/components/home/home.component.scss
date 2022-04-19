@@ -56,7 +56,7 @@ main.landing-page {
   }
   .container {
     overflow: hidden;
-    margin: 0 auto;
+    margin-top: 0;
   }
   }
 
@@ -81,7 +81,7 @@ main.landing-page {
       }
       @include breakpoint(sm) {
         font-size: 1rem;
-        width: calc(100% - 5rem);
+        width: calc(100% - 7rem);
         margin:  4rem 5rem;
       }
       &.dark-mode {
@@ -94,7 +94,7 @@ main.landing-page {
     right: 1rem;
     display: flex;
     flex-flow: row;
-    align-items: center;
+    align-items: flex-start;
     font-size: 18px;
     font-weight: bold;
     .languages {
@@ -174,9 +174,19 @@ main.landing-page {
     margin: 0 auto;
     font-size: 20px;
     font-weight: bold;
-    // background-color: $color-light-background;
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
     ul {
+      padding: 5px;
       margin: 0;
+      margin-right: 8px;
+      @include transition(all);
+      @include breakpoint(sm){
+        border-radius: 20px;
+        background-color: $color-light-transparent-background;
+        border: 1px solid $color-light-border;
+      }
     }
     li {
       color: $color-light-inactive;
@@ -231,7 +241,10 @@ main.landing-page {
     }
     &.menu {
       ul {
-        // background-color: $color-dark-background;
+        @include breakpoint(sm){
+          background-color: $color-dark-transparent-background;
+          border-color: $color-dark-border;
+        }
         li {
           color: $color-dark-inactive;
           a {
@@ -257,10 +270,18 @@ main.landing-page {
     &:hover {
       cursor: pointer;
     }
+    &-close {
+      display: none;
+      &.dark-mode {
+        path {
+          fill: $color-dark-main;
+        }
+      }
+    }
 
     &.dark-mode {
-      svg > path,
-      svg > g > rect {
+      path,
+      g > rect {
         fill: $color-dark-main;
       }
     }
