@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit }  from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild }  from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
@@ -8,6 +8,7 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  @ViewChild('menu') public menu: ElementRef;
   public isFirstPage: boolean = false;
   public isDarkMode: boolean = false;
   public languages: Array<any> = [{ value: 'en', label: 'ENG' }, { value: 'ko', label: 'KOR' }, { value: 'ja', label: 'JPN' }];
@@ -22,6 +23,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.isFirstPage = this.router.url === '/';
     this.initForm();
+  }
+
+  public trackByFn(index: number, item: any){
+    return index;
   }
 
   public toggleMode(){

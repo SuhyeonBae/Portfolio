@@ -1,5 +1,5 @@
 <main [class.dark-mode]="isDarkMode">
-  <ng-container *ngFor="let work of works">
+  <ng-container *ngFor="let work of works; trackBy: trackByFn;">
     <div class="work">
       <div class="work-header">
         <p class="title">{{'WORKS.' + work.title | translate}}</p>

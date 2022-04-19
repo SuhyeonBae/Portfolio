@@ -15,7 +15,7 @@
 
 <main *ngIf="!isFirstPage">
   <form [formGroup]="form" class="sub-menu" [class.dark-mode]="isDarkMode">
-    <ng-container *ngFor="let lang of languages">
+    <ng-container *ngFor="let lang of languages; trackBy: trackByFn;">
       <label class="languages-label" [class.active]="input.value === form.value.language">
         <input #input class="languages" type="radio" name="lang.value" value="{{lang.value}}" (click)="changeLanguage($event)">{{'MENU.' + lang.label | translate}}
       </label>
@@ -46,7 +46,7 @@
           <rect width="70" height="70" rx="0" ry="0" transform="translate(110 0)" fill="#2c8be7"/></g>
       </svg>
     </picture>
-    <ul>
+    <ul #menu>
       <li><a routerLink="/about" routerLinkActive="active">{{'MENU.ABOUT' | translate}}</a></li>
       <li><a routerLink="/works" routerLinkActive="active">{{'MENU.WORKS' | translate}}</a></li>
     </ul>
