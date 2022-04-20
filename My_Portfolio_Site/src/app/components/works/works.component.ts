@@ -28,7 +28,7 @@ export class WorksComponent implements OnInit {
       status: 'DONE',
       imgUrl:  "../../../assets/images/work3.jpg",
       wireframeUrl: "",
-      demoUrl: "https://js-playground-nine.vercel.app/",
+      demoUrl: "https://js-playground-jade.vercel.app/",
       githubUrl: "https://github.com/SuhyeonBae/TodayILearned/tree/main/JS_Practice"
     },
   ]
