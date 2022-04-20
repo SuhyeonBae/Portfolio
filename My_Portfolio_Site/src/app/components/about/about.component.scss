@@ -43,10 +43,12 @@ main {
         h1 {
           font-size: 1.2rem;
           margin: 0;
+          padding-bottom: 5px;
         }
         h3 {
           font-size: 1rem;
           margin: 0;
+          padding-top: 5px;
         }
       }
     }
@@ -74,10 +76,16 @@ main {
           font-size: 0.8rem;
         }
       }
+      @include breakpoint(xs){
+        margin: 1rem 0;
+      }
     }
 
     .skills {
       margin-bottom: 2rem;
+      @include breakpoint(xs){
+        margin-bottom: 1rem;
+      }
     }
     .traits > span {
       color: $color-light-background;

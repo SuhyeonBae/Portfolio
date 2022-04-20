@@ -22,6 +22,10 @@ main {
     justify-content: center;
     align-items: flex-start;
     margin-bottom: 30px;
+    @include breakpoint(xs){
+      width: 95%;
+      min-height: 250px;
+    }
     p, a {
       color: $color-light-main;
       margin: auto 0;
@@ -72,8 +76,8 @@ main {
       margin: 8px auto 16px;
       @include transition(all);
       @include breakpoint(xs) {
-        width: 240px;
-        height: 150px;
+        width: 95%;
+        max-height: 150px;
       }
       img {
         width: 100%;

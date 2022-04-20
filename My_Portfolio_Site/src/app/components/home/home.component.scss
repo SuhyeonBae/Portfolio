@@ -80,9 +80,10 @@ main.landing-page {
         margin: 5rem auto;
       }
       @include breakpoint(sm) {
-        font-size: 1rem;
         width: calc(100% - 7rem);
+        height: 70vh;
         margin:  4rem 5rem;
+        font-size: 1rem;
       }
       &.dark-mode {
         @include customScroll($color-dark-border);
